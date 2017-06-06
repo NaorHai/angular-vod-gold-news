@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
 }
+a {
+  display: block;
+}
 @font-face {
   font-family: 'Open Sans Condensed';
   src: url(../../assets/fonts/OpenSans-CondLight.ttf);
@@ -14,23 +17,28 @@
   height: 50px;
 }
 #logo {
-  display: block;
   font-size: 20px;
   width: 155px;
   color: #ffffff;
   font-family: 'Open Sans Condensed', sans-serif;
   margin: 15px 0 0 10px;
 }
-a:hover, a:focus{
-  text-decoration: none;
-  color: #cccc00;
-}
 span {
   color: #cccc00;
 }
 .menu {
-  /*float: right;*/
-  /*background: red;*/
+  float: right;
+}
+.menu a {
+  display: inline-block;
+  margin: 15px 20px 0 0;
+  color: #ffffff;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 18px;
+}
+.menu a:hover, .menu a:focus{
+  text-decoration: none;
+  color: #cccc00;
 }
 ul{
   list-style: none;
