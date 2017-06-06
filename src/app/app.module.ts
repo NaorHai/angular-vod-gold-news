@@ -26,25 +26,14 @@ import { TopRatedComponent } from './top-rated/top-rated.component';
     FormsModule,
     HttpModule,
     RouterModule.forRoot([
-      {
-        path: 'news',
-        component: NewsComponent
-      },
-      {
-        path: 'reporters',
-        component: ReportetsComponent
-      },
-      {
-        path: 'home',
-        component: HomeComponent
-      },
-      {
-        path: 'top',
-        component: TopRatedComponent
-      }
+      { path: 'news', component: NewsComponent},
+      { path: 'reporters', component: ReportetsComponent},
+      { path: '', component: HomeComponent},
+      { path: 'topRated', component: TopRatedComponent}
     ])
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
