@@ -8,14 +8,14 @@ import  { ApiService } from '../services/api.service';
   styleUrls: ['./reportets.component.css']
 })
 export class ReportetsComponent implements OnInit {
-  vod: number;
+  news = {};
   reporters = {};
 
   constructor(private apiService: ApiService) { }
 
   getReporter(vodId: number){
     this.apiService.getReporterByVodId(vodId).subscribe(data => this.reporters = data);
-    this.vod = vodId;
+    this.news = vodId;
   }
 
 

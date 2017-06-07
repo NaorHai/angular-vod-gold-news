@@ -4,14 +4,16 @@
            placeholder="SEARCH NEWS BY ENTERING VOD ID"
            [(ngModel)] = "reporterId">
     <span class="input-group-btn">
-        <button class="btn btn-default" type="button" (click)="getReporter(vodId)">
+        <button class="btn btn-default" type="button" (click)="getReporter(reporterId)">
           <span class="glyphicon glyphicon-search"></span>
         </button>
     </span>
   </div>
 </div>
-<div class="tail col-md-5 " *ngFor="let vod of hack(vods)">
-  <p class="title-news">{{ vod.title }}</p>
-  <p class="sub-title-news">{{ vod.subTitlte }}</p>
-  <p class="vod-id">Reporter: {{ vod }}</p>
+<div class="tail col-md-5 " *ngFor="let reporter of hack(reporters)">
+  <p class="reporter-name">Name: {{ reporter.name }}</p>
+  <p class="reporter-id">ID: {{ reporter.id }}</p>
+  <p class="reporter-age">Age: {{ reporter.age }}</p>
+  <p class="reporter-proficiency">Proficiency: {{ reporter.proficiency }}</p>
+  <p class="vod-id">Total Reports: {{ reporter.vod }}</p>
 </div>
