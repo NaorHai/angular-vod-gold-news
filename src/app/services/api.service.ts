@@ -21,19 +21,19 @@ export class ApiService {
   }
 
   //min:300 max:310
-  getVodByReporterId(reporterId) {
-    return this.http.post(`${this.baseUrl}/getVodByReporterID`,{reporterId})
+  getVodByReporterId(reporterId: number) {
+    return this.http.post(`${this.baseUrl}/getVodByReporterID`,{id:reporterId})
       .map((res:Response) => res.json());
   }
 
   //min:501 max:505
-  getReporterByVodId(vodId) {
-    return this.http.post(`${this.baseUrl}/getReporterByVodID`,{vodId})
+  getReporterByVodId(vodId: number) {
+    return this.http.post(`${this.baseUrl}/getReporterByVodID`,{id:vodId})
       .map((res:Response) => res.json());
   }
 
   //min:1 max:10
-  getVodRatedHigherThan(rating) {
+  getVodRatedHigherThan(rating: number) {
     return this.http.post(`${this.baseUrl}/getVodRatedHigherThan`,{rating})
       .map((res:Response) => res.json());
   }

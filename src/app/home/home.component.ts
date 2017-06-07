@@ -12,8 +12,9 @@ export class HomeComponent implements OnInit {
   vods = {};
 
   constructor(private apiService: ApiService) {
-    this.apiService.getAllVOD().subscribe(data => this.vods = data );
+    this.apiService.getAllVOD().subscribe(data => this.vods = data);
   }
+
   hack(val) {
     return Array.from(val);
   }
