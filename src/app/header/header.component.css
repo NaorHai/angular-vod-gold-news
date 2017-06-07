@@ -4,6 +4,7 @@
 }
 a {
   display: block;
+  text-decoration: none;
 }
 @font-face {
   font-family: 'Open Sans Condensed';
@@ -37,7 +38,6 @@ span {
   font-size: 18px;
 }
 .menu a:hover, .menu a:focus{
-  text-decoration: none;
   color: #cccc00;
 }
 ul{
