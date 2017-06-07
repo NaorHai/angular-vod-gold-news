@@ -1,3 +1,4 @@
-<div class="tail" *ngFor="let new of news">
-  {{ new }}
+<div class="tail col-md-5 " *ngFor="let vod of hack(vods)">
+  <p class="title-news">{{ vod.title }}</p>
+  <p class="sub-title-news">{{ vod.subTitlte }}</p>
 </div>
