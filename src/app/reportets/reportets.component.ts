@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import  { ApiService } from '../services/api.service';
+import  { Reporter } from './reporter';
 
 @Component({
   selector: 'app-reportets',
@@ -9,18 +10,16 @@ import  { ApiService } from '../services/api.service';
 })
 export class ReportetsComponent implements OnInit {
   news = {};
-  reporters = {};
+  reporters : Reporter[];
 
   constructor(private apiService: ApiService) { }
 
   getReporter(vodId: number){
-    this.apiService.getReporterByVodId(vodId).subscribe(data => this.reporters = data);
-    this.news = vodId;
-  }
-
-
-  hack(val) {
-    return Array.from(val);
+    this.apiService.getReporterByVodId(vodId)
+      .then((reporters : Reporter[]) => {
+        this.news = vodId;
+        this.reporters = reporters;
+      });
   }
 
   ngOnInit() {

@@ -3,38 +3,51 @@
  */
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import 'rxjs/add/operator/map';
+import { Reporter } from '../reportets/reporter';
+import { News } from '../news/news';
+import 'rxjs/add/operator/toPromise';
+
 
 @Injectable()
 export class ApiService {
   constructor (private http: Http) {}
   baseUrl: string = 'https://ws17ex1goldnews.herokuapp.com';
 
-  getAllReporters() {
+  getAllReporters(): Promise<Reporter[]> {
     return this.http.get(`${this.baseUrl}/getAllReporters`)
-      .map((res:Response) => res.json());
+      .toPromise()
+      .then(response => response.json() as Reporter[])
+      .catch(response => response.json({error:"error"}));
   }
 
-  getAllVOD() {
+  getAllVOD(): Promise<News[]> {
     return this.http.get(`${this.baseUrl}/getAllVOD`)
-      .map((res:Response) => res.json());
+      .toPromise()
+      .then(response => response.json() as News[])
+      .catch(response => response.json({error:"error"}));
   }
 
   //min:300 max:310
-  getVodByReporterId(reporterId: number) {
+  getVodByReporterId(reporterId: number): Promise<News[]> {
     return this.http.post(`${this.baseUrl}/getVodByReporterID`,{id:reporterId})
-      .map((res:Response) => res.json());
+      .toPromise()
+      .then(response => response.json() as News[])
+      .catch(response => response.json({error:"error"}));
   }
 
   //min:501 max:505
-  getReporterByVodId(vodId: number) {
+  getReporterByVodId(vodId: number): Promise<Reporter[]> {
     return this.http.post(`${this.baseUrl}/getReporterByVodID`,{id:vodId})
-      .map((res:Response) => res.json());
+      .toPromise()
+      .then(response => response.json() as Reporter[])
+      .catch(response => response.json({error:"error"}));
   }
 
   //min:1 max:10
-  getVodRatedHigherThan(rating: number) {
+  getVodRatedHigherThan(rating: number): Promise<News[]> {
     return this.http.post(`${this.baseUrl}/getVodRatedHigherThan`,{rate:rating})
-      .map((res:Response) => res.json());
+      .toPromise()
+      .then(response => response.json() as News[])
+      .catch(response => response.json({error:"error"}));
   }
 }

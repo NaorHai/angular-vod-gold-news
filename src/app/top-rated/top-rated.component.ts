@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import  { ApiService } from '../services/api.service';
+import  { News } from '../news/news';
 
 @Component({
   selector: 'app-top-rated',
@@ -8,18 +9,16 @@ import  { ApiService } from '../services/api.service';
   styleUrls: ['./top-rated.component.css']
 })
 export class TopRatedComponent implements OnInit {
-  ratedVods = {};
-  top: number = 8;
+  ratedNews : News[];
+  top: number = 8; //top rated
 
-  constructor(private apiService: ApiService) {
-    this.apiService.getVodRatedHigherThan(this.top).subscribe(data => this.ratedVods= data);
-  }
-
-  hack(val) {
-    return Array.from(val).sort();
-  }
+  constructor(private apiService: ApiService) {}
 
   ngOnInit() {
+    this.apiService.getVodRatedHigherThan(this.top)
+      .then((news : News[]) => {
+        this.ratedNews = news;
+      });
   }
 
 }
