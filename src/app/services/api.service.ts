@@ -34,7 +34,7 @@ export class ApiService {
 
   //min:1 max:10
   getVodRatedHigherThan(rating: number) {
-    return this.http.post(`${this.baseUrl}/getVodRatedHigherThan`,{rating})
+    return this.http.post(`${this.baseUrl}/getVodRatedHigherThan`,{rate:rating})
       .map((res:Response) => res.json());
   }
 }

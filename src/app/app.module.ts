@@ -29,7 +29,7 @@ import { TopRatedComponent } from './top-rated/top-rated.component';
       { path: 'news', component: NewsComponent},
       { path: 'reporters', component: ReportetsComponent},
       { path: '', component: HomeComponent},
-      { path: 'topRated', component: TopRatedComponent}
+      { path: 'top', component: TopRatedComponent}
     ])
   ],
   providers: [],

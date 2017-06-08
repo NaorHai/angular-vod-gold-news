@@ -32,11 +32,14 @@ span {
 .menu a {
   display: inline-block;
   margin: 15px 20px 0 0;
-  color: #ffffff;
+  /*color: #ffffff;*/
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 18px;
 }
-.menu a:hover, .menu a:focus{
+.link{
+  color: #ffffff;
+}
+.active-link, a:hover {
   color: #cccc00;
 }
 ul{
@@ -46,3 +49,4 @@ ul{
 li{
   display: inline;
 }
+
