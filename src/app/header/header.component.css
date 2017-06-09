@@ -6,22 +6,17 @@ a {
   display: block;
   text-decoration: none;
 }
-@font-face {
-  font-family: 'Open Sans Condensed';
-  src: url(../../assets/fonts/OpenSans-CondLight.ttf);
-}
-
 .container {
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 50px;
 }
 #logo {
-  font-size: 20px;
-  width: 155px;
+  font-size: 26px;
+  width: 200px;
   color: #ffffff;
   font-family: 'Open Sans Condensed', sans-serif;
-  margin: 15px 0 0 10px;
+  margin: 9px 0 0 10px;
 }
 span {
   color: #cccc00;

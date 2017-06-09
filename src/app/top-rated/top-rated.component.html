@@ -1,6 +1,11 @@
-<div class="tail col-md-8 " *ngFor="let new of ratedNews">
-<p class="title-news">{{ new.title }}</p>
-<p class="sub-title-news">{{ new.subTitlte }}</p>
-<p class="news-id">News Id: {{ new.id }}</p>
-<p class="news-rate">Rating: {{ new.rate }}</p>
+<h1>TOP RATED NEWS:</h1>
+<div class="tail col-md-8 " *ngFor="let rateNew of ratedNews">
+<p class="title-news">{{ rateNew.title }}</p>
+<p>{{ rateNew.subTitlte }}</p>
+<p class="news-id">News Id: {{ rateNew.id }}</p>
+  <p class="news-rate">
+    <span class="glyphicon glyphicon-star"></span>
+    {{ rateNew.rate }}
+    <span class="glyphicon glyphicon-star"></span>
+  </p>
 </div>

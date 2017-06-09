@@ -2,3 +2,29 @@
 body {
   background: url(assets/home.jpg) no-repeat center center fixed;
 }
+@font-face {
+  font-family: 'Open Sans Condensed';
+  src: url(assets/fonts/OpenSans-CondLight.ttf);
+}
+h1 {
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: #cccccc;
+  font-weight: bold;
+}
+.col-lg-8 {
+  padding-left: 0;
+}
+.tail {
+  height: 150px;
+  background: #000000;
+  color: #ffffff;
+  opacity: 0.6;
+  position: relative;
+  border-radius: 15px;
+  margin: 15px 25px 25px 0;
+  padding-top: 5px;
+}
+.title-news, .reporter-name {
+  font-weight: bold;
+  color: #cccccc;
+}

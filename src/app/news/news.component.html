@@ -1,7 +1,8 @@
+<h1>SEARCH NEWS:</h1>
 <div class="col-lg-8">
   <div class="input-group">
     <input type="text" class="form-control"
-           placeholder="SEARCH NEWS BY ENTERING REPORTER ID"
+           placeholder="Insert a reporter ID..."
             [(ngModel)] = "reporterId">
     <span class="input-group-btn">
         <button class="btn btn-default" type="button" (click)="getVod(reporterId)">
@@ -12,6 +13,6 @@
 </div>
 <div class="tail col-md-5 " *ngFor="let vod of vods">
   <p class="title-news">{{ vod.title }}</p>
-  <p class="sub-title-news">{{ vod.subTitlte }}</p>
+  <p>{{ vod.subTitlte }}</p>
   <p class="reporter-id">Reporter Id: {{ reporter }}</p>
 </div>
