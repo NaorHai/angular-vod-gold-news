@@ -1,6 +1,8 @@
-.tail { height: 180px;}
-.input-group {
-  margin-bottom: 15px;
+h1 {
+  display: inline-block;
+}
+.tile {
+  height: 180px;
 }
 .reporter-id {
   font-weight: bold;
@@ -9,3 +11,4 @@
   bottom: 0;
   left: 15px;
 }
+

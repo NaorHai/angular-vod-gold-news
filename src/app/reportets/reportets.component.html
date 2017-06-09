@@ -1,17 +1,11 @@
-<h1>SEARCH REPORTERS:</h1>
+<h1 class="col-md-4">SEARCH REPORTERS:</h1>
 <div class="col-lg-8">
-  <div class="input-group">
-    <input type="text" class="form-control"
+    <input type="text" class="search"
            placeholder="Insert news ID..."
-           [(ngModel)] = "reporterId">
-    <span class="input-group-btn">
-        <button class="btn btn-default" type="button" (click)="getReporter(reporterId)">
-          <span class="glyphicon glyphicon-search"></span>
-        </button>
-    </span>
-  </div>
+           [(ngModel)] = "newsId">
+  <span class="glyphicon glyphicon-search go-search" (click)="getReporter(newsId)"></span>
 </div>
-<div class="tail col-md-5 " *ngFor="let reporter of reporters">
+<div class="tile col-md-5 " *ngFor="let reporter of reporters">
   <p class="reporter-name">Name: {{ reporter.name }}</p>
   <p>ID: {{ reporter.id }}</p>
   <p>Age: {{ reporter.age }}</p>
