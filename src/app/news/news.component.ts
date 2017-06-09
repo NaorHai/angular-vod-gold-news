@@ -14,7 +14,7 @@ export class NewsComponent implements OnInit {
 
   constructor(private apiService: ApiService) { }
 
-  getVod(reporterId: number){
+  getNewsByReporterId(reporterId: number) {
     this.apiService.getVodByReporterId(reporterId)
       .then((vods : News[]) => {
         this.reporter = reporterId;
@@ -23,7 +23,9 @@ export class NewsComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.apiService.getAllVOD()
+      .then((news : News[]) => {
+        this.vods = news;
+      });
   }
-
 }

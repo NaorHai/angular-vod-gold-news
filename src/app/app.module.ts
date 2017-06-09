@@ -26,9 +26,10 @@ import { TopRatedComponent } from './top-rated/top-rated.component';
     FormsModule,
     HttpModule,
     RouterModule.forRoot([
+      { path: '', redirectTo: 'home', pathMatch: 'full'},
       { path: 'news', component: NewsComponent},
       { path: 'reporters', component: ReportetsComponent},
-      { path: '', component: HomeComponent},
+      { path: 'home', component: HomeComponent},
       { path: 'top', component: TopRatedComponent}
     ])
   ],

@@ -1,7 +1,7 @@
 h1 {
   display: inline-block;
 }
-.vod-id {
-  font-weight: bold;
-  color: #cccccc;
+.tile {
+  width: 210px;
+  height: 170px;
 }

@@ -23,13 +23,14 @@ h1 {
   opacity: 0.6;
   position: relative;
   border-radius: 15px;
-  margin: 25px 25px 0 0;
+  margin: 25px 25px 5px 0;
   padding-top: 5px;
 }
-.title-news, .reporter-name {
+.title-news, .reporter-name{
   font-weight: bold;
   color: #cccccc;
 }
+.title-news { font-size: 16px;}
 
 /*search box*/
 input[type="text"] {
@@ -46,6 +47,7 @@ input[type="text"] {
 [type="text"]:focus { outline: none;}
 .go-search {
   cursor: pointer;
+  font-size: 20px;
 }
 ::-webkit-input-placeholder {
   color: #000000;

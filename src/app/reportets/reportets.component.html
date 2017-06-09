@@ -5,7 +5,7 @@
            [(ngModel)] = "newsId">
   <span class="glyphicon glyphicon-search go-search" (click)="getReporter(newsId)"></span>
 </div>
-<div class="tile col-md-5 " *ngFor="let reporter of reporters">
+<div class="tile col-md-5" *ngFor="let reporter of reporters">
   <p class="reporter-name">Name: {{ reporter.name }}</p>
   <p>ID: {{ reporter.id }}</p>
   <p>Age: {{ reporter.age }}</p>

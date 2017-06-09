@@ -23,6 +23,10 @@ export class ReportetsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.apiService.getAllReporters()
+      .then((reporters : Reporter[]) => {
+        this.reporters = reporters;
+      });
   }
 
 }

@@ -11,4 +11,11 @@ h1 {
   bottom: 0;
   left: 15px;
 }
+.vod-id {
+  font-weight: bold;
+  color: #cccccc;
+  position: absolute;
+  right: 15px;
+  bottom: 0;
+}
 

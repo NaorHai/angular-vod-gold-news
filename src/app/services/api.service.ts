@@ -17,14 +17,14 @@ export class ApiService {
     return this.http.get(`${this.baseUrl}/getAllReporters`)
       .toPromise()
       .then(response => response.json() as Reporter[])
-      .catch(response => response.json({error:"error"}));
+      .catch(response => response.json(null));
   }
 
   getAllVOD(): Promise<News[]> {
     return this.http.get(`${this.baseUrl}/getAllVOD`)
       .toPromise()
       .then(response => response.json() as News[])
-      .catch(response => response.json({error:"error"}));
+      .catch(response => response.json({error:"Server is yoo busy, please try later"}));
   }
 
   //min:300 max:310
@@ -40,7 +40,7 @@ export class ApiService {
     return this.http.post(`${this.baseUrl}/getReporterByVodID`,{id:vodId})
       .toPromise()
       .then(response => response.json() as Reporter[])
-      .catch(response => response.json({error:"error"}));
+      .catch(response => response.json({error:"Server is yoo busy, please try later"}));
   }
 
   //min:1 max:10
@@ -48,6 +48,6 @@ export class ApiService {
     return this.http.post(`${this.baseUrl}/getVodRatedHigherThan`,{rate:rating})
       .toPromise()
       .then(response => response.json() as News[])
-      .catch(response => response.json({error:"error"}));
+      .catch(response => response.json({error:"Server is yoo busy, please try later"}));
   }
 }

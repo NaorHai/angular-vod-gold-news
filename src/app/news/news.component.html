@@ -3,10 +3,12 @@
     <input type="text" class="search"
            placeholder="Insert a reporter ID"
            [(ngModel)] = "reporterId">
-      <span class="glyphicon glyphicon-search go-search" (click)="getVod(reporterId)"></span>
+      <span class="glyphicon glyphicon-search go-search" (click)="getNewsByReporterId(reporterId)"></span>
 </div>
 <div class="tile col-md-5 " *ngFor="let vod of vods">
   <p class="title-news">{{ vod.title }}</p>
+  <p class="vod-id">NewID:{{ vod.id }}</p>
   <p>{{ vod.subTitlte }}</p>
-  <p class="reporter-id">Reporter Id: {{ reporter }}</p>
+  <p class="reporter-id">Reporters Id: {{ vod.reporter }}</p>
+
 </div>
