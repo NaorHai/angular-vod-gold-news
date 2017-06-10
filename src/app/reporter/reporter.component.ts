@@ -35,7 +35,6 @@ export class ReporterComponent implements OnInit {
     this.apiService.getReporterByVodId(vodId)
       .then((reporters : Reporter[]) => {
         if (reporters.constructor.name == "Array") {
-          console.log(reporters);
           this.reporters = reporters;
           this.isInvalidQuery = false;
           this.news = vodId;
