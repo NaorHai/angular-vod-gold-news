@@ -1,5 +1,5 @@
-<h1 class="col-md-4">HOT NEWS:</h1>
-<div class="tile col-md-5" *ngFor="let vod of vods" [hidden]="getErrStatus()">
+<h1 class="col-md-12">HOT NEWS:</h1>
+<div class="tile col-md-5" *ngFor="let vod of vods" [hidden]="isErrOccurred">
   <p class="title-news">{{ vod.title }}</p>
   <p>{{ vod.subTitlte }}</p>
 </div>

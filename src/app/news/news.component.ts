@@ -12,6 +12,7 @@ import {logWarnings} from "protractor/built/driverProviders";
 export class NewsComponent implements OnInit {
   reporter : number;
   isErrOccurred : boolean = false;
+  isInvalidQuery : boolean = false;
   vods: News[];
 
   constructor(private apiService: ApiService) { }
@@ -19,24 +20,28 @@ export class NewsComponent implements OnInit {
   ngOnInit() {
     this.apiService.getAllVOD()
       .then((news : News[]) => {
-        this.vods = news;
-        if (!(this.vods instanceof News)) {
+        if (news instanceof News) {
+          this.vods = news;
+          this.isErrOccurred = false;
+        }
+        else {
           this.vods = null;
           this.isErrOccurred = true;
         }
-        else {this.vods = news;}
       });
   }
 
   getNewsByReporterId(reporterId: number) {
     this.apiService.getVodByReporterId(reporterId)
       .then((vods : News[]) => {
-        this.reporter = reporterId;
-        if (!(this.vods instanceof News)) {
-          this.vods = null;
-          this.isErrOccurred = true;
+        if (vods instanceof News) {
+          this.vods = vods;
+          this.isInvalidQuery = false;
         }
-        else {this.vods = vods;}
+        else {
+          this.vods = null;
+          this.isInvalidQuery = true;
+        }
       });
   }
 }

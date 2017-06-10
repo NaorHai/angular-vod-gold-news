@@ -3,7 +3,7 @@
  */
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import { Reporter } from '../reportets/reporter';
+import { Reporter } from '../reporter/reporter';
 import { News } from '../news/news';
 import 'rxjs/add/operator/toPromise';
 

@@ -19,12 +19,14 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.apiService.getAllVOD()
       .then((vods : News[]) => {
-        this.vods = vods;
-        if (!(this.vods instanceof News)) {
+        if (vods instanceof News) {
+          this.isErrOccurred = false;
+          this.vods = vods;
+        }
+        else {
           this.isErrOccurred = true;
           this.vods = null;
         }
-        else {this.vods = vods;}
       });
   }
 }

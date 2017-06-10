@@ -19,14 +19,14 @@ export class TopRatedComponent implements OnInit {
   ngOnInit() {
     this.apiService.getVodRatedHigherThan(this.top)
       .then((vods : News[]) => {
-        this.ratedNews = vods;
-        if (!(this.ratedNews instanceof News)) {
-          this.ratedNews = null;
-          this.isErrOccurred = true;
-        }
-        else {
+        if (vods instanceof News) {
           this.ratedNews = vods;
           News.sortByRating(this.ratedNews);
+          this.isErrOccurred = false;
+        }
+        else {
+          this.ratedNews = null;
+          this.isErrOccurred = true;
         }
     });
   }

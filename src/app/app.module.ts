@@ -8,18 +8,18 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { NewsComponent } from './news/news.component';
-import { ReportetsComponent } from './reportets/reportets.component';
 import { HomeComponent } from './home/home.component';
 import { TopRatedComponent } from './top-rated/top-rated.component';
+import { ReporterComponent } from './reporter/reporter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     NewsComponent,
-    ReportetsComponent,
     HomeComponent,
-    TopRatedComponent
+    TopRatedComponent,
+    ReporterComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +28,7 @@ import { TopRatedComponent } from './top-rated/top-rated.component';
     RouterModule.forRoot([
       { path: '', redirectTo: 'home', pathMatch: 'full'},
       { path: 'news', component: NewsComponent},
-      { path: 'reporters', component: ReportetsComponent},
+      { path: 'reporters', component: ReporterComponent},
       { path: 'home', component: HomeComponent},
       { path: 'top', component: TopRatedComponent}
     ])
