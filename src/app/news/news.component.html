@@ -10,4 +10,4 @@
   <p class="reporter-id">Reporters Id: {{ vod.reporter }}</p>
 </div>
 <div class="error col-lg-12" *ngIf="isErrOccurred">Server is too busy, please try later</div>
-<div class="error col-lg-12" [hidden]="isErrOccurred" *ngIf="isInvalidQuery">Missing Data! maybe the query is invalid</div>
+<div class="error col-lg-12" *ngIf="isInvalidQuery && isErrOccurred == false">Missing Data! maybe the query is invalid</div>

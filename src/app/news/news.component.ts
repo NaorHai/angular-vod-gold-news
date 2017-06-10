@@ -20,7 +20,7 @@ export class NewsComponent implements OnInit {
   ngOnInit() {
     this.apiService.getAllVOD()
       .then((news : News[]) => {
-        if (news instanceof News) {
+        if (news.constructor.name == "Array") {
           this.vods = news;
           this.isErrOccurred = false;
         }
@@ -34,7 +34,7 @@ export class NewsComponent implements OnInit {
   getNewsByReporterId(reporterId: number) {
     this.apiService.getVodByReporterId(reporterId)
       .then((vods : News[]) => {
-        if (vods instanceof News) {
+        if (vods.constructor.name == "Array") {
           this.vods = vods;
           this.isInvalidQuery = false;
         }

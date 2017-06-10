@@ -19,7 +19,7 @@ export class TopRatedComponent implements OnInit {
   ngOnInit() {
     this.apiService.getVodRatedHigherThan(this.top)
       .then((vods : News[]) => {
-        if (vods instanceof News) {
+        if (vods.constructor.name == "Array") {
           this.ratedNews = vods;
           News.sortByRating(this.ratedNews);
           this.isErrOccurred = false;

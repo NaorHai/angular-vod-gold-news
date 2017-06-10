@@ -20,7 +20,7 @@ export class ReporterComponent implements OnInit {
     this.apiService.getAllReporters()
       .then((reporters : Reporter[]) => {
         this.reporters = reporters;
-        if (reporters instanceof Reporter) {
+        if (reporters.constructor.name == "Array") {
           this.reporters = reporters;
           this.isErrOccurred = false;
         }
@@ -34,7 +34,8 @@ export class ReporterComponent implements OnInit {
   getReporter(vodId: number) {
     this.apiService.getReporterByVodId(vodId)
       .then((reporters : Reporter[]) => {
-        if (reporters instanceof Reporter) {
+        if (reporters.constructor.name == "Array") {
+          console.log(reporters);
           this.reporters = reporters;
           this.isInvalidQuery = false;
           this.news = vodId;

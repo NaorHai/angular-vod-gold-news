@@ -9,6 +9,4 @@ export class Reporter {
   name: string;
   proficiency: string;
   url: string;
-
-  getName() {return this.name;}
 }

@@ -21,4 +21,7 @@ export class News {
       return 0;
     });
   }
+  getClassName() {
+      return "News";
+  }
 }

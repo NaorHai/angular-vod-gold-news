@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.apiService.getAllVOD()
       .then((vods : News[]) => {
-        if (vods instanceof News) {
+        if (vods.constructor.name == "Array") {
           this.isErrOccurred = false;
           this.vods = vods;
         }
