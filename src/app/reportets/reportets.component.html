@@ -5,10 +5,12 @@
            [(ngModel)] = "newsId">
   <span class="glyphicon glyphicon-search go-search" (click)="getReporter(newsId)"></span>
 </div>
-<div class="tile col-md-5" *ngFor="let reporter of reporters">
+<div class="tile col-md-5" *ngFor="let reporter of reporters"[hidden]="isInvalidQuery || isErrOccurred">
   <p class="reporter-name">Name: {{ reporter.name }}</p>
   <p>ID: {{ reporter.id }}</p>
   <p>Age: {{ reporter.age }}</p>
   <p>Proficiency: {{ reporter.proficiency }}</p>
   <p class="vod-id">Total Reports: {{ reporter.vod.length }}</p>
 </div>
+<div class="error col-lg-12" *ngIf="isErrOccurred">Server is too busy, please try later</div>
+<div class="error col-lg-12" [hidden]="isErrOccurred" *ngIf="isInvalidQuery">Missing Data! maybe the query is invalid</div>

@@ -1,14 +1,13 @@
 <h1 class="col-md-4">SEARCH NEWS:</h1>
 <div class="col-lg-8">
-    <input type="text" class="search"
-           placeholder="Insert a reporter ID"
-           [(ngModel)] = "reporterId">
-      <span class="glyphicon glyphicon-search go-search" (click)="getNewsByReporterId(reporterId)"></span>
+    <input type="text" class="search" placeholder="Insert a reporter ID" [(ngModel)] = "reporterId">
+    <span class="glyphicon glyphicon-search go-search" (click)="getNewsByReporterId(reporterId)"></span>
 </div>
-<div class="tile col-md-5 " *ngFor="let vod of vods">
+<div class="tile col-md-5 " [hidden]="isInvalidQuery || isErrOccurred" *ngFor="let vod of vods">
   <p class="title-news">{{ vod.title }}</p>
   <p class="vod-id">NewID:{{ vod.id }}</p>
   <p>{{ vod.subTitlte }}</p>
   <p class="reporter-id">Reporters Id: {{ vod.reporter }}</p>
-
 </div>
+<div class="error col-lg-12" *ngIf="isErrOccurred">Server is too busy, please try later</div>
+<div class="error col-lg-12" [hidden]="isErrOccurred" *ngIf="isInvalidQuery">Missing Data! maybe the query is invalid</div>

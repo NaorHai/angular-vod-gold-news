@@ -11,15 +11,23 @@ import  { News } from '../news/news';
 
 export class TopRatedComponent implements OnInit {
   ratedNews : News[];
-  top: number = 8; //top rated
+  isErrOccurred : boolean = false;
+  top: number = 8; // show only 8+ rated news
 
   constructor(private apiService: ApiService) {}
 
   ngOnInit() {
     this.apiService.getVodRatedHigherThan(this.top)
-      .then((news : News[]) => {
-        this.ratedNews = news;
-        News.sortByRating(this.ratedNews);
-      });
+      .then((vods : News[]) => {
+        this.ratedNews = vods;
+        if (!(this.ratedNews instanceof News)) {
+          this.ratedNews = null;
+          this.isErrOccurred = true;
+        }
+        else {
+          this.ratedNews = vods;
+          News.sortByRating(this.ratedNews);
+        }
+    });
   }
 }

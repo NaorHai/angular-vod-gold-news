@@ -11,6 +11,8 @@ import  { News } from '../news/news';
 export class HomeComponent implements OnInit {
 
   vods: News[];
+  isErrOccurred : boolean = false;
+
 
   constructor(private apiService: ApiService) {}
 
@@ -18,6 +20,11 @@ export class HomeComponent implements OnInit {
     this.apiService.getAllVOD()
       .then((vods : News[]) => {
         this.vods = vods;
+        if (!(this.vods instanceof News)) {
+          this.isErrOccurred = true;
+          this.vods = null;
+        }
+        else {this.vods = vods;}
       });
   }
 }

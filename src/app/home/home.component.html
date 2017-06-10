@@ -1,5 +1,6 @@
-<h1>HOT NEWS:</h1>
-<div class="tile col-md-5" *ngFor="let vod of vods">
+<h1 class="col-md-4">HOT NEWS:</h1>
+<div class="tile col-md-5" *ngFor="let vod of vods" [hidden]="getErrStatus()">
   <p class="title-news">{{ vod.title }}</p>
   <p>{{ vod.subTitlte }}</p>
 </div>
+<div class="error col-lg-12" *ngIf="isErrOccurred">Server is too busy, please try later</div>

@@ -54,3 +54,10 @@ input[type="text"] {
 }
 input:focus::-webkit-input-placeholder { color:transparent; }
 
+/*error message*/
+.error {
+  font-size: 40px;
+  margin-left: 0;
+  color: #000000;
+  font-family: 'Open Sans Condensed', sans-serif;
+}

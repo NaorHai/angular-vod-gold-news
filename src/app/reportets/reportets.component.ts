@@ -10,22 +10,33 @@ import  { Reporter } from './reporter';
 })
 export class ReportetsComponent implements OnInit {
   news = {};
+  isErrOccurred : boolean = false;
+  isInvalidQuery: boolean = false;
   reporters : Reporter[];
 
   constructor(private apiService: ApiService) { }
-
-  getReporter(vodId: number){
-    this.apiService.getReporterByVodId(vodId)
-      .then((reporters : Reporter[]) => {
-        this.news = vodId;
-        this.reporters = reporters;
-      });
-  }
 
   ngOnInit() {
     this.apiService.getAllReporters()
       .then((reporters : Reporter[]) => {
         this.reporters = reporters;
+        if (!(this.reporters instanceof Reporter)) {
+          this.reporters = null;
+          this.isErrOccurred = true;
+        }
+        else {this.reporters = reporters;}
+      });
+  }
+
+  getReporter(vodId: number) {
+    this.apiService.getReporterByVodId(vodId)
+      .then((reporters : Reporter[]) => {
+        this.news = vodId;
+        if (!(this.reporters instanceof Reporter)) {
+          this.reporters = null;
+          this.isInvalidQuery = true;
+        }
+        else {this.reporters = reporters;}
       });
   }
 
