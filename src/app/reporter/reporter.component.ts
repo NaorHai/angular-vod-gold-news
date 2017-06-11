@@ -9,7 +9,7 @@ import  { Reporter } from './reporter';
   styleUrls: ['./reporter.component.css']
 })
 export class ReporterComponent implements OnInit {
-  news: number;
+  newsId: number;
   isErrOccurred : boolean = false;
   isInvalidQuery: boolean = false;
   reporters : Reporter[];
@@ -37,7 +37,7 @@ export class ReporterComponent implements OnInit {
         if (reporters.constructor.name == "Array") {
           this.reporters = reporters;
           this.isInvalidQuery = false;
-          this.news = vodId;
+          this.newsId = vodId;
         }
         else {
           this.reporters = null;

@@ -10,7 +10,7 @@ import {logWarnings} from "protractor/built/driverProviders";
   styleUrls: ['news.component.css']
 })
 export class NewsComponent implements OnInit {
-  reporter : number;
+  reporterId : number;
   isErrOccurred : boolean = false;
   isInvalidQuery : boolean = false;
   vods: News[];
@@ -36,6 +36,7 @@ export class NewsComponent implements OnInit {
       .then((vods : News[]) => {
         if (vods.constructor.name == "Array") {
           this.vods = vods;
+          this.reporterId = reporterId;
           this.isInvalidQuery = false;
         }
         else {
