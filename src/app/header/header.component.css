@@ -17,12 +17,14 @@ a {
   color: #ffffff;
   font-family: 'Open Sans Condensed', sans-serif;
   margin: 9px 0 0 10px;
+  float: left;
 }
 span {
   color: #cccc00;
 }
 .menu {
   float: right;
+  width: 390px;
 }
 .menu a {
   display: inline-block;

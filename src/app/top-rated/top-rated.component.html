@@ -3,11 +3,11 @@
 <p class="title-news">{{ rateNew.title }}</p>
 <p>{{ rateNew.subTitlte }}</p>
 <p class="news-id">News Id: {{ rateNew.id }}</p>
-  <p class="news-rate">
+  <div class="news-rate clearfix">
     <span class="glyphicon glyphicon-star"></span>
     {{ rateNew.rate }}
     <span class="glyphicon glyphicon-star"></span>
-  </p>
+  </div>
 </div>
 <div class="error col-lg-12" *ngIf="isErrOccurred">Server is too busy, please try later.</div>
 
