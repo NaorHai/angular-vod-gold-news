@@ -4,7 +4,6 @@ import  { Reporter } from './reporter';
 
 @Component({
   selector: 'app-reporter',
-  providers: [ApiService],
   templateUrl: './reporter.component.html',
   styleUrls: ['./reporter.component.css']
 })

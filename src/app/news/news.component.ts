@@ -5,7 +5,6 @@ import {logWarnings} from "protractor/built/driverProviders";
 
 @Component({
   selector: 'app-news',
-  providers: [ApiService],
   templateUrl: 'news.component.html',
   styleUrls: ['news.component.css']
 })

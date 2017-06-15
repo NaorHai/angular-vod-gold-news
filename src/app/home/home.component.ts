@@ -4,7 +4,6 @@ import  { News } from '../news/news';
 
 @Component({
   selector: 'app-home',
-  providers: [ApiService],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
