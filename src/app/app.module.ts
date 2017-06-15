@@ -11,6 +11,8 @@ import { NewsComponent } from './news/news.component';
 import { HomeComponent } from './home/home.component';
 import { TopRatedComponent } from './top-rated/top-rated.component';
 import { ReporterComponent } from './reporter/reporter.component';
+import  { ApiService } from './services/api.service';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +35,7 @@ import { ReporterComponent } from './reporter/reporter.component';
       { path: 'top', component: TopRatedComponent}
     ])
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
