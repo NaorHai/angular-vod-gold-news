@@ -5,8 +5,6 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
-
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { NewsComponent } from './news/news.component';
