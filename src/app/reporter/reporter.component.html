@@ -1,7 +1,7 @@
 <h1 class="col-md-4">SEARCH REPORTERS:</h1>
 <div class="col-lg-8">
   <input type="text" class="search"
-         placeholder="Insert news ID..."
+         placeholder="Insert news ID"
          [(ngModel)] = "newsId">
   <span class="glyphicon glyphicon-search go-search" (click)="getReporter(newsId)"></span>
 </div>
@@ -13,4 +13,5 @@
   <p class="vod-id">Total Reports: {{ reporter.vod.length }}</p>
 </div>
 <div class="error col-lg-12" *ngIf="isErrOccurred">Server is too busy, please try later</div>
-<div class="error col-lg-12" *ngIf="isInvalidQuery && isErrOccurred == false">Missing Data! maybe the query is invalid</div>
+<div class="error col-lg-12" *ngIf="isInvalidQuery && isErrOccurred == false">
+  Missing Data! maybe the query is invalid. Try: 501 - 505</div>
